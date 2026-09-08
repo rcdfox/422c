@@ -11,7 +11,20 @@ public class Problem2Tester {
                 Problem2.findDollarWords(input),
                 "assignment example");
 
-        // TODO: Add tests that exercise distinct behaviors and boundary cases.
+        // Defect #1: Case preservation
+        TestSupport.checkEquals("EXCELLENT" + System.lineSeparator(),
+                Problem2.findDollarWords("EXCELLENT"),
+                "preserves uppercase exactly as it appeared");
+
+        // Defect #2: Punctuation inside words
+        TestSupport.checkEquals("",
+                Problem2.findDollarWords("boycott's"),
+                "non-alphabetic characters do not end the word prematurely");
+
+        // Defect #3: Multiple spaces
+        TestSupport.checkEquals("telephone" + System.lineSeparator(),
+                Problem2.findDollarWords("telephone     "),
+                "handles trailing spaces or multiple spaces");
 
         TestSupport.finish();
     }
