@@ -1,26 +1,25 @@
 package assignment1;
 
-/*
- * Starter implementation for Assignment #1, Problem 1.
- *
- * IMPORTANT: This implementation is intentionally imperfect.
- * Your job is NOT to replace it immediately. First, develop a strong
- * test suite that exposes its defects and documents the intended
- * behavior described in the assignment.
- */
 public class Problem1 {
 
     public static long largestProduct(String s, int n) {
         long largest = 0;
 
-        // Intentionally imperfect implementation.
-        for (int i = 0; i <= s.length() - n; i++) {
+        // Iterate through entire string length
+        for (int i = 0; i <= s.length(); i++) {
             long product = 1;
-            for (int j = 0; j < n; j++) {
+            
+            for (int j = 0; j < n && (i+j) < s.length(); j++) {
                 product *= (s.charAt(i + j) - '0');
-            }
-            if (product > largest) {
-                largest = product;
+            
+                // Update largest at every length to satisfy "at most n"
+                if (product > largest) {
+                    largest = product;
+                }
+                // Break early if we hit a zero
+                if (product == 0) {
+                    break;
+                }
             }
         }
 

@@ -9,6 +9,26 @@ public class Problem1Tester {
                 "example-sized prefix");
 
         // TODO: Add tests that exercise distinct behaviors and boundary cases.
+        
+        // Shorter sequence beats longer one with a zero
+        TestSupport.checkEquals(9L,
+            Problem1.largestProduct("909",3),
+            "shorter sequence preferable due to zero");
+
+        // Sequence shorter than n
+        TestSupport.checkEquals(81L,
+            Problem1.largestProduct("99", 5),
+            "input string is shorter than n");
+
+        // Exact n is best and no zeros
+        TestSupport.checkEquals(24L, 
+                Problem1.largestProduct("234", 3), 
+                "exact n digits yields the largest product");
+
+        // All zeros
+        TestSupport.checkEquals(0L, 
+                Problem1.largestProduct("0000", 3), 
+                "string of all zeros");
 
         TestSupport.finish();
     }
