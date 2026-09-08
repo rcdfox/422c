@@ -1,3 +1,4 @@
+/* Student Name: Allen Huang, Lab Section: 18690 */
 package assignment1;
 import java.util.Scanner;
 import edu.stanford.nlp.tagger.maxent.MaxentTagger;

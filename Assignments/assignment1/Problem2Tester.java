@@ -1,6 +1,6 @@
+/* Student Name: Allen Huang, Lab Section: 18690 */
 package assignment1;
 
-/** Student-written tests for Problem 2. Add your own test cases below. */
 public class Problem2Tester {
     public static void main(String[] args) {
         String input = "The wicked wizard`s wily wraith garnishes his master`s pasta with garlic.";
