@@ -1,2 +1,0 @@
-Main-Class: assignment1.Problem3
-Class-Path: stanford-postagger.jar
