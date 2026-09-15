@@ -1,0 +1,21 @@
+Problem 1 Defects
+Specification requires: Finding the greatest product formed by at most n adjacent digits.  
+Starter code did: Multiplied exactly n digits together, failing to evaluate shorter sequences which is necessary to avoid zeros. 
+Exposed by: The test "shorter sequence preferable due to zero".
+
+Specification requires: The ability to evaluate sequences up to n digits, which includes processing input strings that are shorter than n.
+Starter code did: Used an outer loop condition (i <= s.length() - n) that skipped the calculation entirely if the input string length was less than n. 
+Exposed by: The test "input string is shorter than n".
+
+Problem 2 Defects
+Specification requires: Outputting each $1.00 word exactly as it appears in the input.
+Starter code did: Forced the appended string to lowercase using .toLowerCase().\
+Exposed by: The test "preserves uppercase exactly as it appeared".
+
+Specification requires: All non-alphabetic characters have a value of 0, and words are delimited only by spaces.
+Starter code did: Used a break; statement when encountering a non-alphabetic character, prematurely ending the calculation for that word.
+Exposed by: The test "non-alphabetic characters do not end the word prematurely".
+
+Specification requires: Words are delimited using spaces, and the program must correctly handle spacing-related edge cases
+Starter code did: Relied on a simple s.split(" "), which fails to properly handle multiple consecutive spaces, passing empty strings into the evaluation loop.
+Exposed by: The test "handles trailing spaces or multiple spaces".
