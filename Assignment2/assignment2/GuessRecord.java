@@ -1,13 +1,13 @@
-package assignment2.mastermind;
+package assignment2;
 
-public class GuessRecord {
+public class GuessRecord<F> {
 
     private final String guess;
-    private final Feedback feedback;
+    private final F feedback;
 
     public GuessRecord(
             String guess,
-            Feedback feedback) {
+            F feedback) {
 
         if (guess == null) {
             throw new IllegalArgumentException(
@@ -29,7 +29,7 @@ public class GuessRecord {
         return guess;
     }
 
-    public Feedback getFeedback() {
+    public F getFeedback() {
         return feedback;
     }
 
